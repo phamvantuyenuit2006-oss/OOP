@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class ChanLe {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Nhập số nguyên N
+        System.out.print("Nhập số nguyên N: ");
+        int N = sc.nextInt();
+
+        // Kiểm tra chẵn hay lẻ
+        if (N % 2 == 0) {
+            System.out.println(N + " là số chẵn");
+        } else {
+            System.out.println(N + " là số lẻ");
+        }
+
+        sc.close();
+    }
+}
