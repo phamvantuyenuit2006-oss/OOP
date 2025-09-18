@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class KiemTraSo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Nhập số nguyên N
+        System.out.print("Nhập số nguyên N: ");
+        int N = sc.nextInt();
+
+        // Kiểm tra âm / zero / dương
+        if (N > 0) {
+            System.out.println(N + " là số dương");
+        } else if (N < 0) {
+            System.out.println(N + " là số âm");
+        } else {
+            System.out.println("N bằng 0");
+        }
+
+        sc.close();
+    }
+}
