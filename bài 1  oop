@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        3
+        System.out.print("Nhập số thứ nhất: ");
+        int a = sc.nextInt();
+        System.out.print("Nhập số thứ hai: ");
+        int b = sc.nextInt();
+       
+        
+        System.out.println("Tổng = " + (a + b));
+        System.out.println("Hiệu = " + (a - b));
+        System.out.println("Tích = " + (a * b));
+        if (b != 0) {
+            System.out.println("Thương = " +(a / b));
+            
+        } else {
+            System.out.println("không thể chia cho 0");
+        }
+    }
+}
