@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class KiemTraNguyenTo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Nhập số tự nhiên N
+        System.out.print("Nhập số tự nhiên N: ");
+        int N = sc.nextInt();
+
+        boolean laNguyenTo = true; // giả sử ban đầu là số nguyên tố
+
+        if (N < 2) {
+            laNguyenTo = false; // số nhỏ hơn 2 không phải số nguyên tố
+        } else {
+            for (int i = 2; i <= Math.sqrt(N); i++) { 
+                if (N % i == 0) {
+                    laNguyenTo = false; 
+                    break; // tìm thấy ước thì dừng
+                }
+            }
+        }
+
+        // Xuất kết quả
+        if (laNguyenTo) {
+            System.out.println(N + " là số nguyên tố");
+        } else {
+            System.out.println(N + " không phải là số nguyên tố");
+        }
+
+        sc.close();
+    }
+}
