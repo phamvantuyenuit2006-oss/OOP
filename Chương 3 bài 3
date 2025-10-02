@@ -1,0 +1,24 @@
+public class HinhTron {
+    private double banKinh;
+
+    public HinhTron() {}
+    public HinhTron(double r) {
+        this.banKinh = r;
+    }
+
+    public void nhap(double r) {
+        this.banKinh = r;
+    }
+
+    public void xuat() {
+        System.out.println("Bán kính: " + banKinh);
+    }
+
+    public double dienTich() {
+        return Math.PI * banKinh * banKinh;
+    }
+
+    public double chuVi() {
+        return 2 * Math.PI * banKinh;
+    }
+}
