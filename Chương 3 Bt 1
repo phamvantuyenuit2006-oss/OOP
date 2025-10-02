@@ -1,0 +1,32 @@
+public class Diem {
+    private double x, y;
+
+    public Diem() {}
+
+    public Diem(double x, double y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public void nhap(double xMoi, double yMoi) {
+        this.x = xMoi;
+        this.y = yMoi;
+    }
+
+    public void xuat() {
+        System.out.println("Toạ độ điểm: (" + x + ", " + y + ")");
+    }
+
+    public void diChuyen(double dx, double dy) {
+        x += dx;
+        y += dy;
+    }
+
+    public static void main(String[] args) {
+        Diem d = new Diem(2, 3);
+        d.xuat(); // In ra tọa độ ban đầu
+
+        d.diChuyen(1, -2); // Di chuyển điểm
+        d.xuat(); // In ra tọa độ sau khi di chuyển
+    }
+}
