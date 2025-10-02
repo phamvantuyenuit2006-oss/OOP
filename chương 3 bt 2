@@ -1,0 +1,26 @@
+public class HinhChuNhat {
+    private double chieuDai, chieuRong;
+
+    public HinhChuNhat() {}
+    public HinhChuNhat(double dai, double rong) {
+        this.chieuDai = dai;
+        this.chieuRong = rong;
+    }
+
+    public void nhap(double dai, double rong) {
+        this.chieuDai = dai;
+        this.chieuRong = rong;
+    }
+
+    public void xuat() {
+        System.out.println("Chiều dài: " + chieuDai + ", Chiều rộng: " + chieuRong);
+    }
+
+    public double dienTich() {
+        return chieuDai * chieuRong;
+    }
+
+    public double chuVi() {
+        return 2 * (chieuDai + chieuRong);
+    }
+}
