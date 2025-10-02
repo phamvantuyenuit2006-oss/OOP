@@ -1,0 +1,39 @@
+public class SinhVien {
+    private String maSV, hoTen, lop;
+    private int namSinh;
+    private double diem1, diem2, diem3;
+
+    public SinhVien() {}
+    public SinhVien(String maSV, String hoTen, String lop, int namSinh,
+                    double diem1, double diem2, double diem3) {
+        this.maSV = maSV;
+        this.hoTen = hoTen;
+        this.lop = lop;
+        this.namSinh = namSinh;
+        this.diem1 = diem1;
+        this.diem2 = diem2;
+        this.diem3 = diem3;
+    }
+
+    public void nhap(String maSV, String hoTen, String lop, int namSinh,
+                     double diem1, double diem2, double diem3) {
+        this.maSV = maSV;
+        this.hoTen = hoTen;
+        this.lop = lop;
+        this.namSinh = namSinh;
+        this.diem1 = diem1;
+        this.diem2 = diem2;
+        this.diem3 = diem3;
+    }
+
+    public void xuat() {
+        System.out.println("Mã SV: " + maSV + ", Họ tên: " + hoTen + ", Lớp: " + lop +
+                           ", Năm sinh: " + namSinh);
+        System.out.println("Điểm: " + diem1 + ", " + diem2 + ", " + diem3);
+        System.out.println("Điểm TB: " + tinhDiemTB());
+    }
+
+    public double tinhDiemTB() {
+        return (diem1 + diem2 + diem3) / 3;
+    }
+}
