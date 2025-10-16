@@ -1,0 +1,101 @@
+//*Thiết kế lớp điểm màu thừa kế từ lớp điểm, bổ sung thuộc tính màu (int), các phương thức thiết lập/nhập/xuất của lớp điểm màu. *//
+
+
+
+
+import java.util.Scanner;
+
+// ===============================
+// LỚP CHA: DIEM
+// ===============================
+class Diem {
+    protected int x;
+    protected int y;
+
+    // Constructor mặc định
+    public Diem() {
+        x = 0;
+        y = 0;
+    }
+
+    // Constructor có tham số
+    public Diem(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    // Nhập tọa độ
+    public void nhap() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Nhập hoành độ x: ");
+        x = sc.nextInt();
+        System.out.print("Nhập tung độ y: ");
+        y = sc.nextInt();
+    }
+
+    // Xuất tọa độ
+    public void xuat() {
+        System.out.println("(" + x + ", " + y + ")");
+    }
+}
+
+// ===============================
+// LỚP CON: DIEMMAU kế thừa từ DIEM
+// ===============================
+class DiemMau extends Diem {
+    private int mau; // Thuộc tính mới
+
+    // Constructor mặc định
+    public DiemMau() {
+        super(); // gọi constructor lớp cha
+        mau = 0;
+    }
+
+    // Constructor có tham số
+    public DiemMau(int x, int y, int mau) {
+        super(x, y);
+        this.mau = mau;
+    }
+
+    // Ghi đè phương thức nhập
+    @Override
+    public void nhap() {
+        Scanner sc = new Scanner(System.in);
+        super.nhap(); // gọi hàm nhập x, y của lớp cha
+        System.out.print("Nhập màu (số nguyên): ");
+        mau = sc.nextInt();
+    }
+
+    // Ghi đè phương thức xuất
+    @Override
+    public void xuat() {
+        System.out.println("(" + x + ", " + y + "), màu: " + mau);
+    }
+
+    // Thêm phương thức đổi màu
+    public void doiMau(int m) {
+        mau = m;
+    }
+}
+
+// ===============================
+// LỚP MAIN (CHƯƠNG TRÌNH CHÍNH)
+// ===============================
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("=== NHẬP ĐIỂM MÀU 1 ===");
+        DiemMau dm1 = new DiemMau();
+        dm1.nhap();
+
+        System.out.println("\n=== THÔNG TIN ĐIỂM MÀU 1 ===");
+        dm1.xuat();
+
+        System.out.println("\n=== KHỞI TẠO ĐIỂM MÀU 2 ===");
+        DiemMau dm2 = new DiemMau(3, 4, 5);
+        dm2.xuat();
+
+        System.out.println("\nĐổi màu của điểm 2 thành 10...");
+        dm2.doiMau(10);
+        dm2.xuat();
+    }
+}
